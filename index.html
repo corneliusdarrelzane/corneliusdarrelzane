@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <style>
+        .halaman_index{
+            display:grid;
+            width:2000px;
+            height:1000px;
+            grid-template-columns:100%;
+            grid-template-rows: 50px 670px 200px ;
+            grid-template-areas: 
+            'navbar'
+            'title'
+            'footer';
+            background-image: url(background.png);
+
+        }
+
+        .navbar{
+            display:grid;
+            grid-area:'navbar';
+            width:110%;
+            height:50px;
+            grid-template-columns: 10% 10% 10% 10% 10%;
+            grid-template-rows:50px;
+            grid-template-areas:
+            'Home'
+            'navbar_2'
+            'navbar_3'
+            'navbar_4'
+            'navbar_5'
+            ;
+            background-color:none;
+            padding-left: 23%;
+
+
+        }
+
+        .Home{
+            grid-area:'Home';
+            width:100%;
+            height:50px;
+            background-color:none;
+            font-family:Glacial ;
+        }
+
+        
+        .navbar_2{
+            grid-area:'navbar_2';
+            width:100%;
+            height:50px;
+            background-color:none;
+            font-family:Glacial ;
+        }
+        .navbar_2:hover{
+            background-color:none;
+        }
+
+        .navbar_3{
+            grid-area:'navbar_3';
+            width:100%;
+            height:50px;
+            background-color:none;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .navbar_4{
+            grid-area:'navbar_4';
+            width:100%;
+            height:50px;
+            background-color:none;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .navbar_5{
+            grid-area:'navbar_5';
+            width:100%;
+            height:50px;
+            background-color:none ;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .button_navigation{
+            width:100%;
+            height:50px;
+            background-color:none;
+            border:none;
+            transition: color 0.5s;
+        }
+        .button_navigation:hover {
+            color: lightcoral;
+        }
+        .judul{
+            padding-left: 33%;
+            padding-top:40px;
+        }
+        .judul img{
+            transition: transform 1s;
+        }
+        .judul img:hover {
+            transform: url('logo1.png');
+            transform: scale(1.2);
+        }   
+        @font-face {
+            font-family: bubble;
+            src: url(font/bubble/KCBubbleShackRegular.ttf);
+        }
+        button{
+            font-family: bubble;
+            font-size: 30px;
+            
+        }
+        .Shop{
+            padding-bottom: 300px;
+        }
+        .footer{
+            background-image:url(footer.png);
+            transition: background-image 1s;
+        }
+        body{
+            overflow: hidden;
+        }
+
+        /**/
+    </style>
+</head>
+<body>
+    <div class="halaman_index">
+        <div class="navbar">
+            <div class="Home">
+                <a href="index.html">
+                    <button class="button_navigation">
+                        HOME
+                    </button>
+                </a>
+            </div>
+            <div class="navbar_2">
+                <a href="about_us.html">
+                    <button class="button_navigation">
+                        ABOUT US
+                    </button>
+                </a>
+            </div>
+            <div class="navbar_3">
+                <a href="location.html">
+                    <button class="button_navigation">
+                        LOCATION
+                    </button>
+                </a>
+            </div>
+            <div class="navbar_4">
+                <a href="form.html">
+                    <button class="button_navigation">
+                        SHOP
+                    </button>
+                </a>
+            </div>
+            <div class="navbar_5">
+                <a href="page4.html">
+                    <button class="button_navigation">
+                        CONTACT US
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="title">
+                <a href="shop.html">
+                <div class="judul">
+                    <img src="Music.png">
+                </div>
+                </a>
+        </div>
+        <div class="footer">
+            
+        </div>
+    </body>
+
+<script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        var judul = document.querySelector(".judul");
+        var image = document.querySelector(".judul img");
+
+        judul.addEventListener("mouseenter", function() {
+            image.src = "Music.png";
+        });
+
+        judul.addEventListener("mouseleave", function() {
+            image.src = "logo1.png";
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        var footer = document.querySelector(".footer");
+        var images = ['footer.png', 'footer2.png', 'footer3.png','footer4.png']; 
+        var currentImageIndex = 0;
+
+        function changeBackground() {
+            footer.style.backgroundImage = 'url(' + images[currentImageIndex] + ')';
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+
+        setInterval(changeBackground, 5000);
+    });
+</script>
+</html>
